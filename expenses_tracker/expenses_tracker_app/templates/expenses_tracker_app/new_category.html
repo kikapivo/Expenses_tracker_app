@@ -1,0 +1,12 @@
+{% extends "expenses_tracker_app/base.html" %}
+
+{% block content %}
+  <p>Add a new category:</p>
+
+  <form action="{% url 'expenses_tracker_app:new_category'%}" method='post'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button name="submit">Add category</button>
+  </form>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends "expenses_tracker_app/base.html" %}
+
+{% block content %}
+
+<p> Categories </p>
+
+<ul>
+    {% for category in categories %}
+      <li>
+          <a href="{% url 'expenses_tracker_app:category' category.id %}">{{ category }}</a>
+      </li>
+    {% empty %}
+    <li>No topics have been added yet.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'expenses_tracker_app:new_category'%}">Add a new category</a>
+
+{% endblock content%}
+
