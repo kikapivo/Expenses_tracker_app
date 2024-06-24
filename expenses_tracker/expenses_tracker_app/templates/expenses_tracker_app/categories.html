@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<p> Categories </p>
+<p>Categories</p>
 
 <ul>
     {% for category in categories %}
@@ -14,7 +14,7 @@
     {% endfor %}
 </ul>
 
-<a href="{% url 'expenses_tracker_app:new_category'%}">Add a new category</a>
+<a href="{% url 'expenses_tracker_app:new_category' %}">Add a new category</a>
 
 {% endblock content%}
 

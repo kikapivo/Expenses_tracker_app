@@ -2,18 +2,25 @@
 
 {% block content %}
 
-<p> Category: {{category }} </p>
+    <p>Category: {{ category }}</p>
 
-<p> Entries: </p>
-<ul>
-{% for entry in entries %}
-    <li>
-        <p>{{entry.date_added|date:'M d, Y H:i'}}</p>
-        <p>{{entry.text|linebreaks}}</p>
-     </li>
-{% empty %}
-  <li>No entries have been added for this category yet.</li>
-{% endfor %}
+    <p>Entries:</p>
+    <p>
+        <a href="{% url 'expenses_tracker_app:new_entry' category.id %}">Add new entry</a>
+    </p>
+
+    <ul>
+    {% for entry in entries %}
+        <li>
+            <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+            <p>{{ entry.text|linebreaks }}</p>
+            <p>
+                <a href="{% url 'expenses_tracker_app:edit_entry' entry.id %}">Edit entry</a>
+            </p>
+        </li>
+    {% empty %}
+        <li>No entries have been added for this category yet.</li>
+    {% endfor %}
 </ul>
 
 {% endblock content %}

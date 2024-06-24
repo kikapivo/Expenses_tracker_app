@@ -1,8 +1,12 @@
 {% extends "expenses_tracker_app/base.html" %}
-{% block content %}
 
+{% block page_header %}
+  <div class="jumbotron">
+      <h1 class="display-3">Track your expenses.</h1>
 
-<p>Expenses tracker App</p>
+      <p class="lead">Make your own Expenses Tracker, and keep a list of your expenses. Whenever you make a new expense, make an entry summarizing the expense.</p>
 
-<p>Expenses tracker app helps you keep track of your expenses, for any category in which you're spending.</p>
-{% endblock content %}
+      <a class="btn btn-lg btn-primary" href="{% url 'users:register'%}"
+         role="button">Register &raquo;</a>
+    </div>
+{% endblock page_header %}
